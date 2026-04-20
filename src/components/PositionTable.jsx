@@ -14,7 +14,7 @@ const PositionTable = ({ summary }) => {
         <table className="min-w-full text-left text-sm text-slate-200">
           <thead className="border-b border-slate-800 text-slate-400">
             <tr>
-              <th className="px-3 py-3">Product</th>
+              <th className="px-3 py-3">Position</th>
               <th className="px-3 py-3">Symbol</th>
               <th className="px-3 py-3">Type</th>
               <th className="px-3 py-3">Strike</th>
@@ -39,11 +39,21 @@ const PositionTable = ({ summary }) => {
             ) : (
               summary.positions.map((position) => (
                 <tr key={position.product_id} className="hover:bg-slate-950/60">
-                  <td className="px-3 py-4">{position.product_id}</td>
-                  <td className="px-3 py-4">{position.symbol}</td>
+                  <td className="px-3 py-4">
+                    {position.size > 0 ? "Buy" : "Sell"}
+                  </td>
+                  <td className="px-3 py-4">
+                    {position.symbol.split("-").slice(0, 3).join("-")}
+                  </td>
                   <td className="px-3 py-4">{position.option_type}</td>
                   <td className="px-3 py-4">{position.strike}</td>
-                  <td className="px-3 py-4">{position.expiry ?? "N/A"}</td>
+                  <td className="px-3 py-4">
+                    {position.expiry
+                      .split("T")[0]
+                      .split("-")
+                      .reverse()
+                      .join("-") ?? "N/A"}
+                  </td>
                   <td className="px-3 py-4">{position.size}</td>
                   <td className="px-3 py-4">{position.entry_price}</td>
                   <td className="px-3 py-4">{position.best_bid}</td>

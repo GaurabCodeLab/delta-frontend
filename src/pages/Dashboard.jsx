@@ -106,7 +106,7 @@ function App() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <button
+              {/* <button
                 onClick={() => handleAction("/start", "Start bot")}
                 // disabled={loading}
                 className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
@@ -116,8 +116,8 @@ function App() {
                 }`}
               >
                 {activeAction === "Start bot" ? "Starting..." : "Start Bot"}
-              </button>
-              <button
+              </button> */}
+              {/* <button
                 onClick={() => handleAction("/stop", "Stop bot")}
                 disabled={loading}
                 className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
@@ -127,7 +127,7 @@ function App() {
                 }`}
               >
                 {activeAction === "Stop bot" ? "Stopping..." : "Stop Bot"}
-              </button>
+              </button> */}
               {/* <button
                 onClick={handleHealthCheck}
                 disabled={loading}
@@ -141,7 +141,7 @@ function App() {
                   ? "Checking..."
                   : "Health Check"}
               </button> */}
-              <button
+              {/* <button
                 onClick={handleRefresh}
                 disabled={loading}
                 className={`rounded-full border px-5 py-2 text-sm transition ${
@@ -151,7 +151,7 @@ function App() {
                 }`}
               >
                 {activeAction === "Refresh" ? "Refreshing..." : "Refresh"}
-              </button>
+              </button> */}
             </div>
             {/* {loading && activeAction && (
               <p className="mt-3 text-sm text-slate-400">
