@@ -1,5 +1,5 @@
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE || "http://localhost:8000";
+  import.meta.env.VITE_API_BASE || "https://delta-option.onrender.com";
 
 export const statCards = [
   { label: "Bot Status", key: "running" },

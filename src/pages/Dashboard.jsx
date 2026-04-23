@@ -113,7 +113,7 @@ function App() {
               <button
                 onClick={() => handleAction("/start", "Start bot")}
                 // disabled={loading}
-                className="rounded-full px-5 py-2 text-sm font-semibold transition bg-cyan-500 text-slate-950 hover:bg-cyan-400"
+                className="rounded-full cursor-pointer px-5 py-2 text-sm font-semibold transition bg-cyan-500 text-slate-950 hover:bg-cyan-400"
               >
                 {activeAction === "Start bot" ? "Starting..." : "Start Bot"}
               </button>

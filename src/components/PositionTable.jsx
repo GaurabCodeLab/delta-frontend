@@ -47,7 +47,7 @@ const PositionTable = ({ summary }) => {
                   </td>
                   <td className="px-3 py-4">{position.option_type}</td>
                   <td className="px-3 py-4">{position.strike}</td>
-                  <td className="px-3 py-4">
+                  <td className="px-3 py-4 whitespace-nowrap">
                     {position.expiry
                       .split("T")[0]
                       .split("-")
