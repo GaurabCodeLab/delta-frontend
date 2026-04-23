@@ -26,6 +26,10 @@ function App() {
   const [error, setError] = useState("");
   const [lastUpdated, setLastUpdated] = useState(null);
 
+  useEffect(() => {
+    handleAction("/start", "Start bot");
+  }, []);
+
   const loadHealth = async () => {
     const healthData = await fetchData("/health");
     setHealth(healthData.status);
@@ -106,17 +110,13 @@ function App() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              {/* <button
+              <button
                 onClick={() => handleAction("/start", "Start bot")}
                 // disabled={loading}
-                className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
-                  loading
-                    ? "bg-cyan-500/70 text-slate-300 cursor-not-allowed"
-                    : "bg-cyan-500 text-slate-950 hover:bg-cyan-400"
-                }`}
+                className="rounded-full px-5 py-2 text-sm font-semibold transition bg-cyan-500 text-slate-950 hover:bg-cyan-400"
               >
                 {activeAction === "Start bot" ? "Starting..." : "Start Bot"}
-              </button> */}
+              </button>
               {/* <button
                 onClick={() => handleAction("/stop", "Stop bot")}
                 disabled={loading}
