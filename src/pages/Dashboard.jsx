@@ -117,7 +117,7 @@ function App() {
               >
                 {activeAction === "Start bot" ? "Starting..." : "Start Bot"}
               </button>
-              {/* <button
+              <button
                 onClick={() => handleAction("/stop", "Stop bot")}
                 disabled={loading}
                 className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
@@ -127,7 +127,7 @@ function App() {
                 }`}
               >
                 {activeAction === "Stop bot" ? "Stopping..." : "Stop Bot"}
-              </button> */}
+              </button>
               {/* <button
                 onClick={handleHealthCheck}
                 disabled={loading}

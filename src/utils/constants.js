@@ -1,5 +1,6 @@
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE || "https://delta-option.onrender.com";
+  import.meta.env.VITE_API_BASE ||
+  "https://bot-load-balancing-101372479.ap-south-1.elb.amazonaws.com";
 
 export const statCards = [
   { label: "Bot Status", key: "running" },
