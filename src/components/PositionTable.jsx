@@ -1,5 +1,4 @@
-import { getPnlClass } from "../utils/commonUtils";
-import { formatPnl } from "../utils/commonUtils";
+import { getPnlClass, formatPnl } from "../utils/commonUtils";
 
 const PositionTable = ({ summary }) => {
   return (
@@ -42,7 +41,7 @@ const PositionTable = ({ summary }) => {
                   <td className="px-3 py-4">
                     {position.size > 0 ? "Buy" : "Sell"}
                   </td>
-                  <td className="px-3 py-4">
+                  <td className="px-3 py-4 whitespace-nowrap">
                     {position.symbol.split("-").slice(0, 3).join("-")}
                   </td>
                   <td className="px-3 py-4">{position.option_type}</td>
