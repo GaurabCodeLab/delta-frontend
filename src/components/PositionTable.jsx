@@ -26,7 +26,7 @@ const PositionTable = ({ summary }) => {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-800">
-            {summary.positions.length === 0 ? (
+            {summary?.positions?.length === 0 ? (
               <tr>
                 <td
                   colSpan="10"
@@ -36,16 +36,16 @@ const PositionTable = ({ summary }) => {
                 </td>
               </tr>
             ) : (
-              summary.positions.map((position) => (
+              summary?.positions?.map((position) => (
                 <tr key={position.product_id} className="hover:bg-slate-950/60">
                   <td className="px-3 py-4">
-                    {position.size > 0 ? "Buy" : "Sell"}
+                    {position?.size > 0 ? "Buy" : "Sell"}
                   </td>
                   <td className="px-3 py-4 whitespace-nowrap">
                     {position.symbol.split("-").slice(0, 3).join("-")}
                   </td>
-                  <td className="px-3 py-4">{position.option_type}</td>
-                  <td className="px-3 py-4">{position.strike}</td>
+                  <td className="px-3 py-4">{position?.option_type}</td>
+                  <td className="px-3 py-4">{position?.strike}</td>
                   <td className="px-3 py-4 whitespace-nowrap">
                     {position.expiry
                       .split("T")[0]
@@ -53,14 +53,14 @@ const PositionTable = ({ summary }) => {
                       .reverse()
                       .join("-") ?? "N/A"}
                   </td>
-                  <td className="px-3 py-4">{position.size}</td>
-                  <td className="px-3 py-4">{position.entry_price}</td>
-                  <td className="px-3 py-4">{position.best_bid}</td>
-                  <td className="px-3 py-4">{position.best_ask}</td>
+                  <td className="px-3 py-4">{position?.size}</td>
+                  <td className="px-3 py-4">{position?.entry_price}</td>
+                  <td className="px-3 py-4">{position?.best_bid}</td>
+                  <td className="px-3 py-4">{position?.best_ask}</td>
                   <td
-                    className={`px-3 py-4 ${getPnlClass(position.current_pnl)}`}
+                    className={`px-3 py-4 ${getPnlClass(position?.current_pnl)}`}
                   >
-                    {formatPnl(position.current_pnl)}
+                    {formatPnl(position?.current_pnl)}
                   </td>
                 </tr>
               ))

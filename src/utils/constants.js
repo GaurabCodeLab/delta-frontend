@@ -1,6 +1,5 @@
 export const API_BASE_URL =
-  import.meta.env.VITE_API_BASE ||
-  "https://bot-load-balancing-101372479.ap-south-1.elb.amazonaws.com";
+  import.meta.env.VITE_API_BASE || "http://localhost:8000";
 
 export const statCards = [
   { label: "Bot Status", key: "running" },

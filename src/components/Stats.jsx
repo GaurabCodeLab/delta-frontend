@@ -7,8 +7,8 @@ import {
 
 const Stats = ({ summary, prevIndexPrice, status }) => {
   const renderValue = (key) => {
-    if (key === "running") return status.running ? "Running" : "Stopped";
-    if (key === "unrealized_pnl") return formatPnl(summary.unrealized_pnl);
+    if (key === "running") return status?.running ? "Running" : "Stopped";
+    if (key === "unrealized_pnl") return formatPnl(summary?.unrealized_pnl);
     return summary[key] ?? "-";
   };
   return (
@@ -24,9 +24,9 @@ const Stats = ({ summary, prevIndexPrice, status }) => {
           <p
             className={`mt-4 text-3xl font-semibold ${
               card.key === "unrealized_pnl"
-                ? getPnlClass(summary.unrealized_pnl)
+                ? getPnlClass(summary?.unrealized_pnl)
                 : card.key === "index_price"
-                  ? getIndexPriceClass(summary.index_price, prevIndexPrice)
+                  ? getIndexPriceClass(summary?.index_price, prevIndexPrice)
                   : "text-white"
             }`}
           >
