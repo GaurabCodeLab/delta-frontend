@@ -27,8 +27,10 @@ function App() {
   const [lastUpdated, setLastUpdated] = useState(null);
 
   useEffect(() => {
-    handleAction("/start", "Start bot");
-  }, []);
+    if (!status.running) {
+      handleAction("/start", "Start bot");
+    }
+  }, [status]);
 
   const loadHealth = async () => {
     const healthData = await fetchData("/health");
